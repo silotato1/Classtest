@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="아주 간단한 단일 파일 HTML 홈페이지 샘플">
+  <meta name="color-scheme" content="light dark">
+  <title>나의 간단한 홈페이지</title>
+  
+  <!--
+    ✅ 이 파일은 HTML만으로 구성된 아주 간단한 단일 페이지 샘플입니다.
+    - 외부 CSS/JS 파일 없이 동작합니다.
+    - 필요한 텍스트만 바꿔서 바로 사용하세요.
+  -->
+
+  <style>
+    /* 내부 스타일만 사용 (선택 사항: 삭제해도 동작은 합니다) */
+    :root { --max: 860px; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif; line-height: 1.6; margin: 0; }
+    a { text-decoration: none; }
+    header { background: #f3f4f6; padding: 24px 16px; }
+    nav { max-width: var(--max); margin: 0 auto; display: flex; gap: 16px; align-items: center; justify-content: space-between; }
+    nav .brand { font-weight: 700; font-size: 1.1rem; }
+    nav .links a { padding: 6px 10px; border-radius: 8px; }
+    nav .links a:hover { background: #e5e7eb; }
+    main { max-width: var(--max); margin: 0 auto; padding: 24px 16px; }
+    section { padding: 32px 0; border-top: 1px solid #e5e7eb; }
+    h1, h2 { line-height: 1.2; }
+    footer { border-top: 1px solid #e5e7eb; padding: 24px 16px; text-align: center; color: #6b7280; }
+    .cta { display: inline-block; margin-top: 12px; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 10px; }
+    .cta:hover { background: #f9fafb; }
+    .muted { color: #6b7280; }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; }
+    .grid { display: grid; gap: 12px; }
+    @media (min-width: 700px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* 접근성: 스킵 링크 */
+    .skip { position: absolute; left: -9999px; top: auto; }
+    .skip:focus { left: 16px; top: 16px; background: #111; color: #fff; padding: 8px 12px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <a href="#content" class="skip">본문으로 건너뛰기</a>
+
+  <header>
+    <nav aria-label="주요">
+      <div class="brand">나의 홈페이지</div>
+      <div class="links" role="menubar">
+        <a role="menuitem" href="#about">소개</a>
+        <a role="menuitem" href="#services">서비스</a>
+        <a role="menuitem" href="#contact">문의</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h1>안녕하세요! 👋</h1>
+    <p class="muted">이 페이지는 <strong>HTML만으로 구성된</strong> 아주 간단한 홈페이지 샘플입니다. 아래 섹션의 텍스트를 바꿔 바로 사용하세요.</p>
+    <a class="cta" href="#contact">문의 남기기</a>
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">소개</h2>
+      <p>
+        여기에 본인이나 브랜드에 대한 간단한 소개를 작성하세요. 예: “저희는 사용자의 문제를 단순하고 빠르게 해결하는 것을 목표로 합니다.”
+      </p>
+    </section>
+
+    <section id="services" aria-labelledby="services-title">
+      <h2 id="services-title">서비스</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>서비스 A</h3>
+          <p>간단한 설명을 적어주세요.</p>
+        </div>
+        <div class="card">
+          <h3>서비스 B</h3>
+          <p>간단한 설명을 적어주세요.</p>
+        </div>
+        <div class="card">
+          <h3>서비스 C</h3>
+          <p>간단한 설명을 적어주세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">문의</h2>
+      <address>
+        이메일: <a href="mailto:you@example.com">you@example.com</a><br>
+        위치: 서울특별시 어딘가 123
+      </address>
+      <p class="muted">※ 단순 HTML 샘플이라 폼 전송 기능은 포함하지 않았습니다.</p>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2025 나의 홈페이지. 모든 권리 보유.</small>
+  </footer>
+</body>
+</html>
